@@ -14,8 +14,8 @@ int const FEET_DESCRIPTION_FIELD_WIDTH = 10;
 
 // function prototypes
 void runFunctions(void);
-void getName(string &name);
-void getHeight_Inches(int &inches);
+int getInches(string prompt);
+void inputInches(int &inches);
 float calculateInchesToFeet(int inches, int INCHES_IN_FOOT);
 float calculateSumOfHeights_Inches(int inches);
 float calculateAverageHeight_Inches(int sumOfHeights_Inches, int TOTAL_INPUTS);
@@ -45,10 +45,11 @@ void runFunctions(void)
     string name;
     int inches;
     float feet;
+    string prompt;
 
-    getName(name);
+    getInches(prompt);
 
-    getHeight_Inches(inches);
+    inputInches(inches);
 
     feet = calculateInchesToFeet(inches, INCHES_IN_FOOT);
 
@@ -61,34 +62,25 @@ void runFunctions(void)
     outputAverageHeight_Inches(averageHeight_Inches);
 }
 
-void getName(string &name)
+int getInches(string prompt)
 {
-    cout << "Enter name 01: ";
-    cin >> name;
+    cout << prompt;
+    int userInput;
+    cin >> userInput;
     flushInput();
-    if (cin.fail())
+    if ( cin.fail() )
     {
         cin.clear();
         flushInput();
-        cout << "Improper data input." << endl;
-        pause();
+        cout << "didn't work" << endl;
         throw 1;
     }
+    return userInput;
 }
 
-void getHeight_Inches(int &inches)
+void inputInches(int &inches)
 {
-    cout << "Enter height 01: ";
-    cin >> inches;
-    flushInput();
-    if (cin.fail())
-    {
-        cin.clear();
-        flushInput();
-        cout << "Improper data input." << endl;
-        pause();
-        throw 1;
-    }
+    inches = getInches("Enter height 01: ");
 }
 
 float calculateInchesToFeet(int inches, int INCHES_IN_FOOT)
