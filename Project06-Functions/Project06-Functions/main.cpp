@@ -13,13 +13,13 @@ int const INCHES_DESCRIPTION_FIELD_WIDTH = 10;
 int const FEET_DESCRIPTION_FIELD_WIDTH = 10;
 
 // function prototypes
-void runStuff(void);
+void runFunctions(void);
 void getInput(string &name, int &inches);
 float calculateInchesToFeet(int inches, int INCHES_IN_FOOT);
 float calculateSumOfHeights_Inches(int inches);
 float calculateAverageHeight_Inches(int sumOfHeights_Inches, int TOTAL_INPUTS);
 void outputDataTable(string name, int inches, float feet);
-void outputAverageHeight_Inches(float averageHeight_Inches);
+void outputAverageHeight_Inches(int averageHeight_Inches);
 void pause(void);
 void flushInput(void);
 
@@ -27,7 +27,7 @@ int main(void)
 {
     try
     {
-        runStuff();
+        runFunctions();
     }
     catch (int exceptionValue)
     {
@@ -39,7 +39,7 @@ int main(void)
     return 0;
 }
 
-void runStuff(void)
+void runFunctions(void)
 {
     string name;
     int inches;
@@ -121,7 +121,7 @@ void outputDataTable(string name, int inches, float feet)
     cout << endl;
 }
 
-void outputAverageHeight_Inches(float averageHeight_Inches)
+void outputAverageHeight_Inches(int averageHeight_Inches)
 {
     cout << "Average height is " << averageHeight_Inches << " inches." << endl;
     cout << endl;
