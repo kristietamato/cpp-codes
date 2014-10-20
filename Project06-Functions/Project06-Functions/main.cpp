@@ -14,7 +14,8 @@ int const FEET_DESCRIPTION_FIELD_WIDTH = 10;
 
 // function prototypes
 void runFunctions(void);
-void getInput(string &name, int &inches);
+void getName(string &name);
+void getHeight_Inches(int &inches);
 float calculateInchesToFeet(int inches, int INCHES_IN_FOOT);
 float calculateSumOfHeights_Inches(int inches);
 float calculateAverageHeight_Inches(int sumOfHeights_Inches, int TOTAL_INPUTS);
@@ -45,7 +46,9 @@ void runFunctions(void)
     int inches;
     float feet;
 
-    getInput(name, inches);
+    getName(name);
+
+    getHeight_Inches(inches);
 
     feet = calculateInchesToFeet(inches, INCHES_IN_FOOT);
 
@@ -58,7 +61,7 @@ void runFunctions(void)
     outputAverageHeight_Inches(averageHeight_Inches);
 }
 
-void getInput(string &name, int &inches)
+void getName(string &name)
 {
     cout << "Enter name 01: ";
     cin >> name;
@@ -71,6 +74,10 @@ void getInput(string &name, int &inches)
         pause();
         throw 1;
     }
+}
+
+void getHeight_Inches(int &inches)
+{
     cout << "Enter height 01: ";
     cin >> inches;
     flushInput();
