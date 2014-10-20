@@ -3,10 +3,14 @@
 
 #include <iostream>
 #include <string>
+#include <iomanip>
 using namespace std;
 
 int const INCHES_IN_FOOT = 12;
 int const TOTAL_INPUTS = 10;
+int const NAME_DESCRIPTION_FIELD_WIDTH = 20;
+int const INCHES_DESCRIPTION_FIELD_WIDTH = 10;
+int const FEET_DESCRIPTION_FIELD_WIDTH = 10;
 
 // function prototypes
 void runStuff(void);
@@ -103,15 +107,24 @@ float calculateAverageHeight_Inches(int sumOfHeights_Inches, int TOTAL_INPUTS)
 }
 
 void outputDataTable(string name, int inches, float feet)
-{
-    cout << "Name" << "Inches" << "Feet" << endl;
+{;
+    cout << left << setw(NAME_DESCRIPTION_FIELD_WIDTH) << "Name";
+    cout << right << setw(INCHES_DESCRIPTION_FIELD_WIDTH) << "Inches";
+    cout << right << setw(FEET_DESCRIPTION_FIELD_WIDTH) << "Feet";
+    cout << endl << endl;
+    cout << left << setw(NAME_DESCRIPTION_FIELD_WIDTH) << name;
+    cout << right << setw(INCHES_DESCRIPTION_FIELD_WIDTH) << inches;
+    cout.setf(ios::fixed);
+    cout.setf(ios::showpoint);
+    cout.precision(1);
+    cout << right << setw(FEET_DESCRIPTION_FIELD_WIDTH) << feet << endl;
     cout << endl;
-    cout << name << inches << feet << endl;
 }
 
 void outputAverageHeight_Inches(float averageHeight_Inches)
 {
     cout << "Average height is " << averageHeight_Inches << " inches." << endl;
+    cout << endl;
 }
 
 void pause(void)
