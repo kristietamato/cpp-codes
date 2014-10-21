@@ -39,125 +39,34 @@ int main(void)
     string evaluation;
 
     // 2.1 Assign string outputs to a case where all cards are the same.
-    if (card1 == 1 && card2 == 1 && card3 == 1)
-    {
-        equalCards = "Aces";
-    }
-    else if (card1 == 2 && card2 == 2 && card3 == 2)
-    {
-        equalCards = "twos";
-    }
-    else if (card1 == 3 && card2 == 3 && card3 == 3)
-    {
-        equalCards = "threes";
-    }
-    else if (card1 == 4 && card2 == 4 && card3 == 4)
-    {
-        equalCards = "fours";
-    }
-    else if (card1 == 5 && card2 == 5 && card3 == 5)
-    {
-        equalCards = "fives";
-    }
-    else if (card1 == 6 && card2 == 6 && card3 == 6)
-    {
-        equalCards = "sixes";
-    }
-    else if (card1 == 7 && card2 == 7 && card3 == 7)
-    {
-        equalCards = "sevens";
-    }
-    else if (card1 == 8 && card2 == 8 && card3 == 8)
-    {
-        equalCards = "eights";
-    }
-    else if (card1 == 9 && card2 == 9 && card3 == 9)
-    {
-        equalCards = "nines";
-    }
-    else if (card1 == 10 && card2 == 10 && card3 == 10)
-    {
-        equalCards = "tens";
-    }
-    else if (card1 == 11 && card2 == 11 && card3 == 11)
-    {
-        equalCards = "jacks";
-    }
-    else if (card1 == 12 && card2 == 12 && card3 == 12)
-    {
-        equalCards = "queens";
-    }
-    else if (card1 == 13 && card2 == 13 && card3 == 13)
-    {
-        equalCards = "kings";
-    }
+    if (card1 == 1 && card2 == 1 && card3 == 1) equalCards = "Aces";
+    else if (card1 == 2 && card2 == 2 && card3 == 2) equalCards = "twos";
+    else if (card1 == 3 && card2 == 3 && card3 == 3) equalCards = "threes";
+    else if (card1 == 4 && card2 == 4 && card3 == 4) equalCards = "fours";
+    else if (card1 == 5 && card2 == 5 && card3 == 5) equalCards = "fives";
+    else if (card1 == 6 && card2 == 6 && card3 == 6) equalCards = "sixes";
+    else if (card1 == 7 && card2 == 7 && card3 == 7) equalCards = "sevens";
+    else if (card1 == 8 && card2 == 8 && card3 == 8) equalCards = "eights";
+    else if (card1 == 9 && card2 == 9 && card3 == 9) equalCards = "nines";
+    else if (card1 == 10 && card2 == 10 && card3 == 10) equalCards = "tens";
+    else if (card1 == 11 && card2 == 11 && card3 == 11) equalCards = "jacks";
+    else if (card1 == 12 && card2 == 12 && card3 == 12) equalCards = "queens";
+    else if (card1 == 13 && card2 == 13 && card3 == 13) equalCards = "kings";
     
     // 2.2 Assign string outputs to case where there are pairs of cards.
-    if ( (card1 == 1 && card2 == 1) || (card1 == 1 && card3 == 1)
-        || (card2 == 1 && card3 == 1) )
-    {
-        pairCards = "Aces";
-    }
-    else if ( (card1 == 2 && card2 == 2) || (card1 == 2 && card3 == 2)
-             || (card2 == 2 && card3 == 2) )
-    {
-        pairCards = "twos";
-    }
-    else if ( (card1 == 3 && card2 == 3) || (card1 == 3 && card3 == 3)
-             || (card2 == 3 && card3 == 3) )
-    {
-        pairCards = "threes";
-    }
-    else if ( (card1 == 4 && card2 == 4) || (card1 == 4 && card3 == 4)
-             || (card2 == 4 && card3 == 4) )
-    {
-        pairCards = "fours";
-    }
-    else if ( (card1 == 5 && card2 == 5) || (card1 == 5 && card3 == 5)
-             || (card2 == 1 && card3 == 5) )
-    {
-        pairCards = "fives";
-    }
-    else if ( (card1 == 6 && card2 == 6) || (card1 == 6 && card3 == 6)
-             || (card2 == 6 && card3 == 6) )
-    {
-        pairCards = "sixes";
-    }
-    else if ( (card1 == 7 && card2 == 7) || (card1 == 7 && card3 == 7)
-             || (card2 == 7 && card3 == 7) )
-    {
-        pairCards = "sevens";
-    }
-    else if ( (card1 == 8 && card2 == 8) || (card1 == 8 && card3 == 8)
-             || (card2 == 8 && card3 == 8) )
-    {
-        pairCards = "eights";
-    }
-    else if ( (card1 == 9 && card2 == 9) || (card1 == 9 && card3 == 9)
-             || (card2 == 9 && card3 == 9) )
-    {
-        pairCards = "nines";
-    }
-    else if ( (card1 == 10 && card2 == 10) || (card1 == 10 && card3 == 10)
-             || (card2 == 10 && card3 == 10) )
-    {
-        pairCards = "tens";
-    }
-    else if ( (card1 == 11 && card2 == 11) || (card1 == 11 && card3 == 11)
-             || (card2 == 11 && card3 == 11) )
-    {
-        pairCards = "jacks";
-    }
-    else if ( (card1 == 12 && card2 == 12) || (card1 == 12 && card3 == 12)
-             || (card2 == 12 && card3 == 12) )
-    {
-        pairCards = "queens";
-    }
-    else if ( (card1 == 13 && card2 == 13) || (card1 == 13 && card3 == 13)
-             || (card2 == 13 && card3 == 13) )
-    {
-        pairCards = "kings";
-    }
+    if ( (card1 == 1 && card2 == 1) || (card1 == 1 && card3 == 1) || (card2 == 1 && card3 == 1) ) pairCards = "Aces";
+    else if ( (card1 == 2 && card2 == 2) || (card1 == 2 && card3 == 2) | (card2 == 2 && card3 == 2) ) pairCards = "twos";
+    else if ( (card1 == 3 && card2 == 3) || (card1 == 3 && card3 == 3) || (card2 == 3 && card3 == 3) ) pairCards = "threes";
+    else if ( (card1 == 4 && card2 == 4) || (card1 == 4 && card3 == 4) || (card2 == 4 && card3 == 4) ) pairCards = "fours";
+    else if ( (card1 == 5 && card2 == 5) || (card1 == 5 && card3 == 5) || (card2 == 1 && card3 == 5) ) pairCards = "fives";
+    else if ( (card1 == 6 && card2 == 6) || (card1 == 6 && card3 == 6) || (card2 == 6 && card3 == 6) ) pairCards = "sixes";
+    else if ( (card1 == 7 && card2 == 7) || (card1 == 7 && card3 == 7) || (card2 == 7 && card3 == 7) ) pairCards = "sevens";
+    else if ( (card1 == 8 && card2 == 8) || (card1 == 8 && card3 == 8) || (card2 == 8 && card3 == 8) ) pairCards = "eights";
+    else if ( (card1 == 9 && card2 == 9) || (card1 == 9 && card3 == 9) || (card2 == 9 && card3 == 9) ) pairCards = "nines";
+    else if ( (card1 == 10 && card2 == 10) || (card1 == 10 && card3 == 10) || (card2 == 10 && card3 == 10) ) pairCards = "tens";
+    else if ( (card1 == 11 && card2 == 11) || (card1 == 11 && card3 == 11) || (card2 == 11 && card3 == 11) ) pairCards = "jacks";
+    else if ( (card1 == 12 && card2 == 12) || (card1 == 12 && card3 == 12) || (card2 == 12 && card3 == 12) ) pairCards = "queens";
+    else if ( (card1 == 13 && card2 == 13) || (card1 == 13 && card3 == 13)|| (card2 == 13 && card3 == 13) ) pairCards = "kings";
 
     // 2.3 Organize the card from smallest to largest and in increasing order.
     smallest = card1;
@@ -191,58 +100,19 @@ int main(void)
     differenceBetweenLargestAndSmallest = largest - smallest;
 
     // 2.4 Assign a string output to a case where there is one high card.
-    if (largest == 1)
-    {
-        highCard = "an Ace";
-    }
-    else if (largest == 2)
-    {
-        highCard = "a two";
-    }
-    else if (largest == 3)
-    {
-        highCard = "a three";
-    }
-    else if ( largest == 4 )
-    {
-        highCard = "a four";
-    }
-    else if ( largest == 5 )
-    {
-        highCard = "a five";
-    }
-    else if ( largest == 6 )
-    {
-        highCard = "a six";
-    }
-    else if ( largest == 7 )
-    {
-        highCard = "a seven";
-    }
-    else if ( largest == 8 )
-    {
-        highCard = "an eight";
-    }
-    else if ( largest == 9 )
-    {
-        highCard = "a nine";
-    }
-    else if ( largest == 10 )
-    {
-        highCard = "a ten";
-    }
-    else if ( largest == 11 )
-    {
-        highCard = "a Jack";
-    }
-    else if ( largest == 12 )
-    {
-        highCard = "a Queen";
-    }
-    else if ( largest == 13 )
-    {
-        highCard = "a King";
-    }
+    if (largest == 1) highCard = "an Ace";
+    else if (largest == 2) highCard = "a two";
+    else if (largest == 3) highCard = "a three";
+    else if ( largest == 4 ) highCard = "a four";
+    else if ( largest == 5 ) highCard = "a five";
+    else if ( largest == 6 ) highCard = "a six";
+    else if ( largest == 7 ) highCard = "a seven";
+    else if ( largest == 8 ) highCard = "an eight";
+    else if ( largest == 9 ) highCard = "a nine";
+    else if ( largest == 10 ) highCard = "a ten";
+    else if ( largest == 11 ) highCard = "a Jack";
+    else if ( largest == 12 ) highCard = "a Queen";
+    else if ( largest == 13 ) highCard = "a King";
 
     // 2.5 Assign outputs to all cases.
     if ( card1 == card2 && card1 == card3 && card2 == card3 )
