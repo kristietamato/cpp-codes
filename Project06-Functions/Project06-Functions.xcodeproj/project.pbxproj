@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21ABB89919F6DBD100F88AC5 /* Tools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21ABB89719F6DBD100F88AC5 /* Tools.cpp */; };
+		21ABB89C19F6E10900F88AC5 /* RunProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21ABB89A19F6E10900F88AC5 /* RunProgram.cpp */; };
 		21CFF99819F577D6002D0AAF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21CFF99719F577D6002D0AAF /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +25,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		21ABB89719F6DBD100F88AC5 /* Tools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tools.cpp; sourceTree = "<group>"; };
+		21ABB89819F6DBD100F88AC5 /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
+		21ABB89A19F6E10900F88AC5 /* RunProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RunProgram.cpp; sourceTree = "<group>"; };
+		21ABB89B19F6E10900F88AC5 /* RunProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunProgram.h; sourceTree = "<group>"; };
 		21CFF99419F577D6002D0AAF /* Project06-Functions */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Project06-Functions"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21CFF99719F577D6002D0AAF /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -41,6 +47,8 @@
 		21CFF98B19F577D6002D0AAF = {
 			isa = PBXGroup;
 			children = (
+				21ABB89719F6DBD100F88AC5 /* Tools.cpp */,
+				21ABB89819F6DBD100F88AC5 /* Tools.h */,
 				21CFF99619F577D6002D0AAF /* Project06-Functions */,
 				21CFF99519F577D6002D0AAF /* Products */,
 			);
@@ -58,6 +66,8 @@
 			isa = PBXGroup;
 			children = (
 				21CFF99719F577D6002D0AAF /* main.cpp */,
+				21ABB89A19F6E10900F88AC5 /* RunProgram.cpp */,
+				21ABB89B19F6E10900F88AC5 /* RunProgram.h */,
 			);
 			path = "Project06-Functions";
 			sourceTree = "<group>";
@@ -119,6 +129,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				21CFF99819F577D6002D0AAF /* main.cpp in Sources */,
+				21ABB89919F6DBD100F88AC5 /* Tools.cpp in Sources */,
+				21ABB89C19F6E10900F88AC5 /* RunProgram.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +244,7 @@
 				21CFF99D19F577D6002D0AAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
