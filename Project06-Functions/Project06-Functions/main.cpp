@@ -1,5 +1,5 @@
 //  Created by Kristie Nguyen on 10/20/14.
-//  A program that converts height and gets its average out of 10 then prints these data.
+//  A program that converts height and gets its average out of 5 then prints these data.
 
 #include <iostream>
 #include <string>
@@ -31,6 +31,7 @@ int main(void)
     }
     catch (int exceptionValue)
     {
+        cout << endl;
         cout << "Program closing." << endl;
         pause_program();
         return exceptionValue;
@@ -39,7 +40,7 @@ int main(void)
     return 0;
 }
 
-// run functions to calculate and output
+// run functions to calculate and output data
 void runFunctions(void)
 {
     string name1;
@@ -66,6 +67,11 @@ void runFunctions(void)
     inches5 = getInches("Enter height 05: ");
     cout << endl;
 
+    // calculate average
+    int sumOfHeights_Inches = inches1 + inches2 + inches3 + inches4 + inches5;
+    int averageHeight_Inches = sumOfHeights_Inches / TOTAL_HEIGHT_INPUTS;
+    outputAverageHeight_Inches(averageHeight_Inches);
+
     // output table of data
     cout << left << setw(NAME_DESCRIPTION_FIELD_WIDTH) << "Name";
     cout << right << setw(INCHES_DESCRIPTION_FIELD_WIDTH) << "Inches";
@@ -76,11 +82,6 @@ void runFunctions(void)
     outputDataTable(name3, inches3, calculateInchesToFeet(inches3));
     outputDataTable(name4, inches4, calculateInchesToFeet(inches4));
     outputDataTable(name5, inches5, calculateInchesToFeet(inches5));
-
-    // calculate average
-    int sumOfHeights_Inches = inches1 + inches2 + inches3 + inches4 + inches5;
-    int averageHeight_Inches = sumOfHeights_Inches / TOTAL_HEIGHT_INPUTS;
-    outputAverageHeight_Inches(averageHeight_Inches);
 }
 
 string getName(string prompt)
@@ -100,7 +101,7 @@ int getInches(string prompt)
     cin >> userInput;
     flushInput();
     ifCinFail();
-    if (userInput < 0)
+    if (userInput < 0 || userInput == 0)
     {
         cout << "That's not a real height!" << endl;
         throw 2;
@@ -145,6 +146,7 @@ void ifCinFail(void)
 
 void pause_program(void)
 {
+    cout << endl;
     cout << "Press ENTER to finish...";
     cin.ignore(999,'\n');
 }
