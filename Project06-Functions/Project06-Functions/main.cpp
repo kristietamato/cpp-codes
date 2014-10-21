@@ -6,8 +6,8 @@
 #include <iomanip>
 using namespace std;
 
-int const INCHES_IN_FOOT = 12;
-int const TOTAL_INPUTS = 10;
+float const INCHES_IN_FOOT = 12.0;
+int const TOTAL_HEIGHT_INPUTS = 5;
 int const NAME_DESCRIPTION_FIELD_WIDTH = 20;
 int const INCHES_DESCRIPTION_FIELD_WIDTH = 10;
 int const FEET_DESCRIPTION_FIELD_WIDTH = 10;
@@ -16,13 +16,11 @@ int const FEET_DESCRIPTION_FIELD_WIDTH = 10;
 void runFunctions(void);
 string getName(string prompt);
 int getInches(string prompt);
-float calculateInchesToFeet(int inches1);
-float calculateSumOfHeights_Inches(int inches1, int inches2, int inches3, int inches4, int inches5);
-float calculateAverageHeight_Inches(int sumOfHeights_Inches);
+float calculateInchesToFeet(int inches);
 void outputDataTable(string name, int inches, float feet);
 void outputAverageHeight_Inches(int averageHeight_Inches);
 void ifCinFail(void);
-void pause(void);
+void pause_program(void);
 void flushInput(void);
 
 int main(void)
@@ -34,10 +32,10 @@ int main(void)
     catch (int exceptionValue)
     {
         cout << "Program closing." << endl;
-        pause();
+        pause_program();
         return exceptionValue;
     }
-    pause();
+    pause_program();
     return 0;
 }
 
@@ -48,47 +46,38 @@ void runFunctions(void)
     string name3;
     string name4;
     string name5;
-
     int inches1;
     int inches2;
     int inches3;
     int inches4;
     int inches5;
 
-    float feet;
-
+    //get user input
     name1 = getName("Enter name 01: ");
-
     inches1 = getInches("Enter height 01: ");
-
     name2 = getName("Enter name 02: ");
-
     inches2 = getInches("Enter height 02: ");
-
     name3 = getName("Enter name 03: ");
-
     inches3 = getInches("Enter height 03: ");
-
     name4 = getName("Enter name 04: ");
-
     inches4 = getInches("Enter height 04: ");
-
     name5 = getName("Enter name 05: ");
-
     inches5 = getInches("Enter height 05: ");
 
-    feet = calculateInchesToFeet(inches1);
+    //table of data
+    cout << left << setw(NAME_DESCRIPTION_FIELD_WIDTH) << "Name";
+    cout << right << setw(INCHES_DESCRIPTION_FIELD_WIDTH) << "Inches";
+    cout << right << setw(FEET_DESCRIPTION_FIELD_WIDTH) << "Feet";
+    cout << endl << endl;
+    outputDataTable(name1, inches1, calculateInchesToFeet(inches1));
+    outputDataTable(name2, inches2, calculateInchesToFeet(inches2));
+    outputDataTable(name3, inches3, calculateInchesToFeet(inches3));
+    outputDataTable(name4, inches4, calculateInchesToFeet(inches4));
+    outputDataTable(name5, inches5, calculateInchesToFeet(inches5));
 
-    calculateSumOfHeights_Inches(inches1, inches2, inches3, inches4, inches5);
-
-    calculateAverageHeight_Inches(sumOfHeights_Inches);
-
-    outputDataTable(name1, inches1, feet);
-    outputDataTable(name2, inches2, feet);
-    outputDataTable(name3, inches3, feet);
-    outputDataTable(name4, inches4, feet);
-    outputDataTable(name5, inches5, feet);
-
+    //average
+    int sumOfHeights_Inches = inches1 + inches2 + inches3 + inches4 + inches5;
+    int averageHeight_Inches = sumOfHeights_Inches / TOTAL_HEIGHT_INPUTS;
     outputAverageHeight_Inches(averageHeight_Inches);
 }
 
@@ -117,33 +106,15 @@ int getInches(string prompt)
     return userInput;
 }
 
-float calculateInchesToFeet(int inches1)
+float calculateInchesToFeet(int inches)
 {
     float feet;
-    feet = (float)inches1 / INCHES_IN_FOOT;
+    feet = (float)inches / INCHES_IN_FOOT;
     return feet;
-}
-
-float calculateSumOfHeights_Inches(int inches1, int inches2, int inches3, int inches4, int inches5)
-{
-    float sumOfHeights_Inches;
-    sumOfHeights_Inches = inches1 + inches2 + inches3 + inches4 + inches5;
-    return sumOfHeights_Inches;
-}
-
-float calculateAverageHeight_Inches(int sumOfHeights_Inches)
-{
-    float averageHeight_Inches;
-    averageHeight_Inches = sumOfHeights_Inches / TOTAL_INPUTS;
-    return averageHeight_Inches;
 }
 
 void outputDataTable(string name, int inches, float feet)
 {
-    cout << left << setw(NAME_DESCRIPTION_FIELD_WIDTH) << "Name";
-    cout << right << setw(INCHES_DESCRIPTION_FIELD_WIDTH) << "Inches";
-    cout << right << setw(FEET_DESCRIPTION_FIELD_WIDTH) << "Feet";
-    cout << endl << endl;
     cout << left << setw(NAME_DESCRIPTION_FIELD_WIDTH) << name;
     cout << right << setw(INCHES_DESCRIPTION_FIELD_WIDTH) << inches;
     cout.setf(ios::fixed);
@@ -170,7 +141,7 @@ void ifCinFail(void)
     }
 }
 
-void pause(void)
+void pause_program(void)
 {
     cout << "Press ENTER to finish...";
     cin.ignore(999,'\n');
