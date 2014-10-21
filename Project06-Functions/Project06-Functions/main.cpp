@@ -39,6 +39,7 @@ int main(void)
     return 0;
 }
 
+// run functions to calculate and output
 void runFunctions(void)
 {
     string name1;
@@ -52,7 +53,7 @@ void runFunctions(void)
     int inches4;
     int inches5;
 
-    //get user input
+    // get user input
     name1 = getName("Enter name 01: ");
     inches1 = getInches("Enter height 01: ");
     name2 = getName("Enter name 02: ");
@@ -63,8 +64,9 @@ void runFunctions(void)
     inches4 = getInches("Enter height 04: ");
     name5 = getName("Enter name 05: ");
     inches5 = getInches("Enter height 05: ");
+    cout << endl;
 
-    //table of data
+    // output table of data
     cout << left << setw(NAME_DESCRIPTION_FIELD_WIDTH) << "Name";
     cout << right << setw(INCHES_DESCRIPTION_FIELD_WIDTH) << "Inches";
     cout << right << setw(FEET_DESCRIPTION_FIELD_WIDTH) << "Feet";
@@ -75,7 +77,7 @@ void runFunctions(void)
     outputDataTable(name4, inches4, calculateInchesToFeet(inches4));
     outputDataTable(name5, inches5, calculateInchesToFeet(inches5));
 
-    //average
+    // calculate average
     int sumOfHeights_Inches = inches1 + inches2 + inches3 + inches4 + inches5;
     int averageHeight_Inches = sumOfHeights_Inches / TOTAL_HEIGHT_INPUTS;
     outputAverageHeight_Inches(averageHeight_Inches);
@@ -100,7 +102,7 @@ int getInches(string prompt)
     ifCinFail();
     if (userInput < 0)
     {
-        cout << "No negative heights." << endl;
+        cout << "That's not a real height!" << endl;
         throw 2;
     }
     return userInput;
