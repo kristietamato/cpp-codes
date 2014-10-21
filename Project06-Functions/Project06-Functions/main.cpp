@@ -6,7 +6,7 @@
 #include <iomanip>
 using namespace std;
 
-int const INCHES_IN_FOOT = 12;
+float const INCHES_IN_FOOT = 12;
 int const TOTAL_INPUTS = 10;
 int const NAME_DESCRIPTION_FIELD_WIDTH = 20;
 int const INCHES_DESCRIPTION_FIELD_WIDTH = 10;
@@ -17,7 +17,7 @@ void runFunctions(void);
 string getName(string prompt);
 int getInches(string prompt);
 float calculateInchesToFeet(int inches, int INCHES_IN_FOOT);
-float calculateSumOfHeights_Inches(int inches);
+float calculateSumOfHeights_Inches(int inches1, int inches2, int inches3, int inches4, int inches5, int inches6, int inches7, int inches8, int inches9, int inches10);
 float calculateAverageHeight_Inches(int sumOfHeights_Inches, int TOTAL_INPUTS);
 void outputDataTable(string name, int inches, float feet);
 void outputAverageHeight_Inches(int averageHeight_Inches);
@@ -43,14 +43,31 @@ int main(void)
 
 void runFunctions(void)
 {
-    string name;
-    int inches;
+    string name1;
+    string name2;
+    string name3;
+    string name4;
+    string name5;
+    string name6;
+    string name7;
+    string name8;
+    string name9;
+    string name10;
+    int inches1;
+    int inches2;
+    int inches3;
+    int inches4;
+    int inches5;
+    int inches6;
+    int inches7;
+    int inches8;
+    int inches9;
+    int inches10;
     float feet;
-    string prompt;
 
-    name = getName("Enter name 01: ");
+    name1 = getName("Enter name 01: ");
 
-    inches = getInches("Enter height 01: ");
+    inches1 = getInches("Enter height 01: ");
 
     name2 = getName("Enter name 02: ");
 
@@ -74,27 +91,36 @@ void runFunctions(void)
 
     name7 = getName("Enter name 07: ");
 
-    inches7 = getInches("Enter height 01: ");
+    inches7 = getInches("Enter height 07: ");
 
-    name8 = getName("Enter name 01: ");
+    name8 = getName("Enter name 08: ");
 
-    inches8 = getInches("Enter height 01: ");
+    inches8 = getInches("Enter height 08: ");
 
-    name9 = getName("Enter name 01: ");
+    name9 = getName("Enter name 09: ");
 
-    inches9 = getInches("Enter height 01: ");
+    inches9 = getInches("Enter height 10: ");
 
-    name10 = getName("Enter name 01: ");
+    name10 = getName("Enter name 10: ");
 
-    inches10 = getInches("Enter height 01: ");
+    inches10 = getInches("Enter height 10: ");
 
-    feet = calculateInchesToFeet(inches, INCHES_IN_FOOT);
+    feet = calculateInchesToFeet(inches1, inches2, inches3, inches4, inches5, inches6, inches7, inches8, inches9, inches10);
 
     float sumOfHeights_Inches = calculateSumOfHeights_Inches(inches);
 
     float averageHeight_Inches = calculateAverageHeight_Inches(sumOfHeights_Inches, TOTAL_INPUTS);
 
-    outputDataTable(name, inches, feet);
+    outputDataTable(name1, inches1, feet);
+    outputDataTable(name2, inches2, feet);
+    outputDataTable(name3, inches3, feet);
+    outputDataTable(name4, inches4, feet);
+    outputDataTable(name5, inches5, feet);
+    outputDataTable(name6, inches6, feet);
+    outputDataTable(name7, inches7, feet);
+    outputDataTable(name8, inches8, feet);
+    outputDataTable(name9, inches9, feet);
+    outputDataTable(name10, inches10, feet);
 
     outputAverageHeight_Inches(averageHeight_Inches);
 }
@@ -124,14 +150,14 @@ int getInches(string prompt)
     return userInput;
 }
 
-float calculateInchesToFeet(int inches, int INCHES_IN_FOOT)
+float calculateInchesToFeet(int inches1, int inches2, int inches3, int inches4, int inches5, int inches6, int inches7, int inches8, int inches9, int inches10)
 {
     float feet;
     feet = inches / INCHES_IN_FOOT;
     return feet;
 }
 
-float calculateSumOfHeights_Inches(int inches)
+float calculateSumOfHeights_Inches(int inches1, int inches2, int inches3, int inches4, int inches5, int inches6, int inches7, int inches8, int inches9, int inches10)
 {
     float sumOfHeights_Inches;
     sumOfHeights_Inches = inches + inches;
