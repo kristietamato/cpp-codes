@@ -16,9 +16,9 @@ int const FEET_DESCRIPTION_FIELD_WIDTH = 10;
 void runFunctions(void);
 string getName(string prompt);
 int getInches(string prompt);
-float calculateInchesToFeet(int inches, int INCHES_IN_FOOT);
-float calculateSumOfHeights_Inches(int inches1);
-float calculateAverageHeight_Inches(int sumOfHeights_Inches, int TOTAL_INPUTS);
+float calculateInchesToFeet(int inches1);
+float calculateSumOfHeights_Inches(int inches1, int inches2, int inches3, int inches4, int inches5);
+float calculateAverageHeight_Inches(int sumOfHeights_Inches);
 void outputDataTable(string name, int inches, float feet);
 void outputAverageHeight_Inches(int averageHeight_Inches);
 void ifCinFail(void);
@@ -79,9 +79,9 @@ void runFunctions(void)
 
     feet = calculateInchesToFeet(inches1);
 
-    float sumOfHeights_Inches = calculateSumOfHeights_Inches(inches1);
+    calculateSumOfHeights_Inches(inches1, inches2, inches3, inches4, inches5);
 
-    float averageHeight_Inches = calculateAverageHeight_Inches(sumOfHeights_Inches, TOTAL_INPUTS);
+    calculateAverageHeight_Inches(sumOfHeights_Inches);
 
     outputDataTable(name1, inches1, feet);
     outputDataTable(name2, inches2, feet);
@@ -131,7 +131,7 @@ float calculateSumOfHeights_Inches(int inches1, int inches2, int inches3, int in
     return sumOfHeights_Inches;
 }
 
-float calculateAverageHeight_Inches(int sumOfHeights_Inches, int TOTAL_INPUTS)
+float calculateAverageHeight_Inches(int sumOfHeights_Inches)
 {
     float averageHeight_Inches;
     averageHeight_Inches = sumOfHeights_Inches / TOTAL_INPUTS;
