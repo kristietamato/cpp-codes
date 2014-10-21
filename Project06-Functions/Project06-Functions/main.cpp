@@ -14,13 +14,14 @@ int const FEET_DESCRIPTION_FIELD_WIDTH = 10;
 
 // function prototypes
 void runFunctions(void);
+string getName(string prompt);
 int getInches(string prompt);
-void inputInches(int &inches);
 float calculateInchesToFeet(int inches, int INCHES_IN_FOOT);
 float calculateSumOfHeights_Inches(int inches);
 float calculateAverageHeight_Inches(int sumOfHeights_Inches, int TOTAL_INPUTS);
 void outputDataTable(string name, int inches, float feet);
 void outputAverageHeight_Inches(int averageHeight_Inches);
+void ifCinFail(void);
 void pause(void);
 void flushInput(void);
 
@@ -32,7 +33,7 @@ int main(void)
     }
     catch (int exceptionValue)
     {
-        cout << "Something went wrong. Program closing." << endl;
+        cout << "Program closing." << endl;
         pause();
         return exceptionValue;
     }
@@ -47,9 +48,45 @@ void runFunctions(void)
     float feet;
     string prompt;
 
-    getInches(prompt);
+    name = getName("Enter name 01: ");
 
-    inputInches(inches);
+    inches = getInches("Enter height 01: ");
+
+    name2 = getName("Enter name 02: ");
+
+    inches2 = getInches("Enter height 02: ");
+
+    name3 = getName("Enter name 03: ");
+
+    inches3 = getInches("Enter height 03: ");
+
+    name4 = getName("Enter name 04: ");
+
+    inches4 = getInches("Enter height 04: ");
+
+    name5 = getName("Enter name 05: ");
+
+    inches5 = getInches("Enter height 05: ");
+
+    name6 = getName("Enter name 06: ");
+
+    inches6 = getInches("Enter height 06: ");
+
+    name7 = getName("Enter name 07: ");
+
+    inches7 = getInches("Enter height 01: ");
+
+    name8 = getName("Enter name 01: ");
+
+    inches8 = getInches("Enter height 01: ");
+
+    name9 = getName("Enter name 01: ");
+
+    inches9 = getInches("Enter height 01: ");
+
+    name10 = getName("Enter name 01: ");
+
+    inches10 = getInches("Enter height 01: ");
 
     feet = calculateInchesToFeet(inches, INCHES_IN_FOOT);
 
@@ -62,25 +99,29 @@ void runFunctions(void)
     outputAverageHeight_Inches(averageHeight_Inches);
 }
 
+string getName(string prompt)
+{
+    cout << prompt;
+    string userInput;
+    cin >> userInput;
+    flushInput();
+    ifCinFail();
+    return userInput;
+}
+
 int getInches(string prompt)
 {
     cout << prompt;
     int userInput;
     cin >> userInput;
     flushInput();
-    if ( cin.fail() )
+    ifCinFail();
+    if (userInput < 0)
     {
-        cin.clear();
-        flushInput();
-        cout << "didn't work" << endl;
-        throw 1;
+        cout << "No negative heights." << endl;
+        throw 2;
     }
     return userInput;
-}
-
-void inputInches(int &inches)
-{
-    inches = getInches("Enter height 01: ");
 }
 
 float calculateInchesToFeet(int inches, int INCHES_IN_FOOT)
@@ -89,7 +130,6 @@ float calculateInchesToFeet(int inches, int INCHES_IN_FOOT)
     feet = inches / INCHES_IN_FOOT;
     return feet;
 }
-
 
 float calculateSumOfHeights_Inches(int inches)
 {
@@ -126,9 +166,20 @@ void outputAverageHeight_Inches(int averageHeight_Inches)
     cout << endl;
 }
 
+void ifCinFail(void)
+{
+    if (cin.fail())
+    {
+        cin.clear();
+        flushInput();
+        cout << "Improper data." << endl;
+        throw 1;
+    }
+}
+
 void pause(void)
 {
-	cout << "Press ENTER to finish...";
+    cout << "Press ENTER to finish...";
     cin.ignore(999,'\n');
 }
 
