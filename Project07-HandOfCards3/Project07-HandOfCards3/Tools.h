@@ -1,14 +1,20 @@
 //
 //  Tools.h
-//  Project07-HandOfCards3
-//
-//  Created by Kristie Nguyen on 10/25/14.
-//  Copyright (c) 2014 Kristie Nguyen. All rights reserved.
-//
 
 #ifndef __Project07_HandOfCards3__Tools__
 #define __Project07_HandOfCards3__Tools__
+#include <string>
+using namespace std;
 
-#include <stdio.h>
+// input range
+const int MIN_CARD_NORMAL_VALUE		= 1;
+const int MAX_CARD_NORMAL_VALUE		= 13;
+
+void getInt( int &card1, int &card2, int &card3 );
+void flushInput(void);
+void pause(void);
+void processError(int result, string message);
+void finishStreamInput(void);
+void checkInputSuccess(void);
 
 #endif /* defined(__Project07_HandOfCards3__Tools__) */

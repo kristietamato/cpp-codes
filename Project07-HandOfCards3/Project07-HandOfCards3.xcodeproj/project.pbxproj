@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2134CA1D19FCB54C00C9AEBB /* CardHand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2134CA1B19FCB54C00C9AEBB /* CardHand.cpp */; };
+		215CC75319FCC75C00C17A3E /* Tools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 215CC75119FCC75C00C17A3E /* Tools.cpp */; };
 		21FFD7BE19FC640D009A6E13 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21FFD7BD19FC640D009A6E13 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +25,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2134CA1B19FCB54C00C9AEBB /* CardHand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CardHand.cpp; sourceTree = "<group>"; };
+		2134CA1C19FCB54C00C9AEBB /* CardHand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardHand.h; sourceTree = "<group>"; };
+		215CC75119FCC75C00C17A3E /* Tools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tools.cpp; sourceTree = "<group>"; };
+		215CC75219FCC75C00C17A3E /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
 		21FFD7BA19FC640D009A6E13 /* Project07-HandOfCards3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Project07-HandOfCards3"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21FFD7BD19FC640D009A6E13 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,6 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				21FFD7BD19FC640D009A6E13 /* main.cpp */,
+				215CC75119FCC75C00C17A3E /* Tools.cpp */,
+				215CC75219FCC75C00C17A3E /* Tools.h */,
+				2134CA1B19FCB54C00C9AEBB /* CardHand.cpp */,
+				2134CA1C19FCB54C00C9AEBB /* CardHand.h */,
 			);
 			path = "Project07-HandOfCards3";
 			sourceTree = "<group>";
@@ -118,7 +128,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				215CC75319FCC75C00C17A3E /* Tools.cpp in Sources */,
 				21FFD7BE19FC640D009A6E13 /* main.cpp in Sources */,
+				2134CA1D19FCB54C00C9AEBB /* CardHand.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +244,7 @@
 				21FFD7C319FC640D009A6E13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
