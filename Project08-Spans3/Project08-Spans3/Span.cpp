@@ -7,6 +7,10 @@
 #include<iostream>
 using namespace std;
 
+const int INCH_TO_FOOT_FACTOR = 12;
+const int INCH_TO_YARD_FACTOR = 36;
+const int FOOT_TO_YARD_FACTOR = 3;
+
 Span::Span(string unit, int length)
 {
     setUnit(unit);
@@ -43,18 +47,44 @@ string Span::getUnit()
     return unitType;
 }
 
-int Span::getLength()
+int Span::getLengthInches()
 {
-    return unitLength;
+    return unitLength_Inches;
+}
+
+int Span::getLengthFeet()
+{
+    return unitLength_Feet;
+}
+
+double Span::getLengthYards()
+{
+    return unitLength_Yards;
 }
 
 void Span::convertSpan(void)
 {
-
+    if (unitType == "inches")
+    {
+        unitLength_Inches = unitLength;
+        unitLength_Feet = unitLength/INCH_TO_FOOT_FACTOR;
+        unitLength_Yards = double(unitLength)/INCH_TO_YARD_FACTOR;
+    }
+    else if (unitType == "feet")
+    {
+        unitLength_Feet = unitLength;
+        unitLength_Inches = unitLength * INCH_TO_FOOT_FACTOR;
+        unitLength_Yards = double(unitLength)/FOOT_TO_YARD_FACTOR;
+    }
+    else
+    {
+        unitLength_Yards = double(unitLength);
+        unitLength_Feet = unitLength * FOOT_TO_YARD_FACTOR;
+        unitLength_Inches = unitLength * INCH_TO_YARD_FACTOR;
+    }
 }
 
-void Span::displaySpan(void)
+void increaseBy(string, int)
 {
-    cout << "span is " << unitLength << " " << getUnit() << " or " << endl;
-    cout << endl;
+
 }

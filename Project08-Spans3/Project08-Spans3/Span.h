@@ -19,15 +19,22 @@ public:
 
     string getUnit();
 
-    int getLength();
+    int getLengthInches();
+
+    int getLengthFeet();
+
+    double getLengthYards();
+
+    void increaseBy(string, int);
 
     void convertSpan(void);
-
-    void displaySpan(void);
 
 private:
     string unitType;
     int unitLength;
+    int unitLength_Inches;
+    int unitLength_Feet;
+    double unitLength_Yards;
     int factor;
 
 };

@@ -29,11 +29,19 @@ int main(void)
     cout << endl;
 
     cout << "First ";
-    span1.displaySpan();
+    span1.convertSpan();
+    cout << "span is " << span1.getLengthInches() << " inches or " << span1.getLengthFeet()
+    << " feet or " <<  span1.getLengthYards() << " yards." << endl;
+    cout << endl;
     cout << "Second ";
-    span2.displaySpan();
+    span2.convertSpan();
+    cout << "span is " << span2.getLengthInches() << " inches or " << span2.getLengthFeet()
+    << " feet or " <<  span2.getLengthYards() << " yards." << endl;
 
-    cout << "Sum span is " << span1.getLength() + span2.getLength();
+    cout << "Sum span is " << span1.getLengthInches() + span2.getLengthInches() << " inches or "
+         << span1.getLengthFeet() + span2.getLengthFeet() << " feet or "
+         << span1.getLengthYards() + span2.getLengthYards()
+         << " yards." << endl;
     cout << endl;
 
     pause();
