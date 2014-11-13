@@ -11,32 +11,33 @@ class Span
 {
 public:
 
-    Span(string unit, int length);
+    Span(string unit, double length);
 
     void setUnit(string unit);
 
-    void setLength(int length);
+    void setLength( double length);
 
     string getUnit();
 
-    int getLengthInches();
+    double getLength();
 
-    int getLengthFeet();
+    double getLengthInches();
+
+    double getLengthFeet();
 
     double getLengthYards();
 
-    void increaseBy(string, int);
-
-    void convertSpan(void);
+    void increaseSpan(Span span);
 
 private:
     string unitType;
-    int unitLength;
-    int unitLength_Inches;
-    int unitLength_Feet;
+    double unitLength;
+    double unitLength_Inches;
+    double unitLength_Feet;
     double unitLength_Yards;
     int factor;
 
+    void convertSpan(void);
 };
 
 #endif

@@ -8,25 +8,20 @@ using namespace std;
 
 void pause(void)
 {
-    cout << "Press ENTER to close.";
+    cout << "Press ENTER to continue...";
     cin.ignore(999,'\n');
 }
 
-void checkInputSuccess(void)
+void checkInputSuccess(string unit)
 {
-    if ( cin.fail() )
+    if ( unit != "inches" && unit != "inch" &&
+        unit != "feet" && unit != "foot" &&
+        unit != "yards" && unit != "yard")
     {
         cin.clear();
         flushInput();
-        error( "Input Failure." );
+        throw 1;
     }
-}
-
-void error( string message )
-{
-    cout << message << endl;
-    pause();
-    throw 1;
 }
 
 void flushInput(void)
@@ -40,16 +35,16 @@ string getUnitType(string unit)
     {
         return "inches";
     }
-    else if (unit == "feet" || unit == "foot")
+    if (unit == "feet" || unit == "foot")
     {
         return "feet";
     }
-    else if (unit == "yards" || unit == "yard")
+    if (unit == "yards" || unit == "yard")
     {
         return "yards";
     }
     else
     {
-        return "Error. Invalid Data Input";
+        throw 1;
     }
 }

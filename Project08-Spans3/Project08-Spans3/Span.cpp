@@ -11,12 +11,12 @@ const int INCH_TO_FOOT_FACTOR = 12;
 const int INCH_TO_YARD_FACTOR = 36;
 const int FOOT_TO_YARD_FACTOR = 3;
 
-Span::Span(string unit, int length)
+Span::Span(string unit, double length)
 {
     setUnit(unit);
     setLength(length);
 }
-
+// set unitType to only inches, feet, or yards
 void Span::setUnit(string unit)
 {
     if (unit == "inches" || unit == "inch")
@@ -33,13 +33,14 @@ void Span::setUnit(string unit)
     }
     else
     {
-        error("Error. Invalid input.");
+        throw 1;
     }
 }
 
-void Span::setLength(int length)
+void Span::setLength(double length)
 {
     unitLength = length;
+    convertSpan();
 }
 
 string Span::getUnit()
@@ -47,12 +48,17 @@ string Span::getUnit()
     return unitType;
 }
 
-int Span::getLengthInches()
+double Span::getLength()
+{
+    return unitLength;
+}
+
+double Span::getLengthInches()
 {
     return unitLength_Inches;
 }
 
-int Span::getLengthFeet()
+double Span::getLengthFeet()
 {
     return unitLength_Feet;
 }
@@ -84,7 +90,18 @@ void Span::convertSpan(void)
     }
 }
 
-void increaseBy(string, int)
+void Span::increaseSpan(Span span)
 {
-
+    if (unitType == "inches")
+    {
+        setLength(unitLength_Inches + span.getLengthInches());
+    }
+    else if (unitType == "feet")
+    {
+        setLength(unitLength_Feet + span.getLengthFeet());
+    }
+    else
+    {
+        setLength(unitLength_Yards+ span.getLengthYards());
+    }
 }

@@ -8,10 +8,8 @@ using namespace std;
 
 string unitInput(string prompt);
 void pause(void);
-void checkInputSuccess(void);
-void error( string message );
+void checkInputSuccess(string unit1);
 void flushInput(void);
 string getUnitType(string unit);
-
 
 #endif
