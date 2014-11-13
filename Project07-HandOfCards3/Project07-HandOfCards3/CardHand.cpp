@@ -1,10 +1,5 @@
-//
 //  CardHand.cpp
-//  Project07-HandOfCards3
-//
-//  Created by Kristie Nguyen on 10/25/14.
-//  Copyright (c) 2014 Kristie Nguyen. All rights reserved.
-//
+
 
 #include "CardHand.h"
 #include <string>
@@ -14,13 +9,10 @@ using namespace std;
 void CardHand::what_do_i_have()
 {
     // output hand evaluation
-    cout << endl;
-    cout << "You have ";
-    if		( is3OfAKind )	cout << "three " << keyCardName << keyCardNamePlural << '.';
-    else if	( isStraight )	cout << keyCardNameArticle << ' ' << keyCardName << "-high straight.";
-    else if ( isPair )		cout << "a pair of " << keyCardName << keyCardNamePlural << ".";
-    else					cout << keyCardNameArticle << ' ' << keyCardName << '.';
-    cout << endl;
+    if		( is3OfAKind )	cout << "three " << keyCardName << keyCardNamePlural;
+    else if	( isStraight )	cout << keyCardNameArticle << ' ' << keyCardName << "-high straight";
+    else if ( isPair )		cout << "a pair of " << keyCardName << keyCardNamePlural;
+    else					cout << keyCardNameArticle << ' ' << keyCardName;
 }
 
 int CardHand::hand_as_int()
@@ -61,7 +53,6 @@ int CardHand::hand_as_int()
     }
 
 }
-
 
 void CardHand::set_hand(int cardA, int cardB, int cardC)
 {

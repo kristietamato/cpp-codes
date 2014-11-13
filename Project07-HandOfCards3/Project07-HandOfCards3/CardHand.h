@@ -1,7 +1,7 @@
 //  CardHand.h
 
-#ifndef __Project07_HandOfCards3__CardHand__
-#define __Project07_HandOfCards3__CardHand__
+#ifndef CARDHAND_LOCK
+#define CARDHAND_LOCK
 
 #include <string>
 using namespace std;
@@ -48,4 +48,4 @@ public:
     void set_hand(int, int, int);
 };
 
-#endif /* defined(__Project07_HandOfCards3__CardHand__) */
+#endif

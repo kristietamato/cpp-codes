@@ -1,8 +1,7 @@
-//
 //  Tools.h
 
-#ifndef __Project07_HandOfCards3__Tools__
-#define __Project07_HandOfCards3__Tools__
+#ifndef TOOLS_LOCK
+#define TOOLS_LOCK
 #include <string>
 using namespace std;
 
@@ -17,4 +16,4 @@ void processError(int result, string message);
 void finishStreamInput(void);
 void checkInputSuccess(void);
 
-#endif /* defined(__Project07_HandOfCards3__Tools__) */
+#endif

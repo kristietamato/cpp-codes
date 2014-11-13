@@ -14,7 +14,6 @@ void getInt(int &card1, int &card2, int &card3 )
         << ", separated by spaces: ";
     cin >> card1 >> card2 >> card3;
     finishStreamInput();
-
     // range check
     if ( card1 < MIN_CARD_NORMAL_VALUE || card1 > MAX_CARD_NORMAL_VALUE
         || card2 < MIN_CARD_NORMAL_VALUE || card2 > MAX_CARD_NORMAL_VALUE
@@ -22,6 +21,7 @@ void getInt(int &card1, int &card2, int &card3 )
     {
         processError(1, "Input range error. Press ENTER to terminate:");
     }
+
 }
 
 void finishStreamInput(void)
@@ -55,6 +55,6 @@ void processError(int result, string message)
 
 void pause(void)
 {
-    cout << "Press ENTER to continue...";
+    cout << "Press ENTER to close.";
     cin.ignore(999,'\n');
 }
